@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.description {
+    font-size: 1.5rem;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: flex-end;
+}
+.header_user_block {
+    height: 100%;
+    width: 50%;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.header_user_block span {
+    margin: 0 5px;
+}
+.header_login {
+    display: none;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.header_nav_block {
+    height: 100%;
+    width: 50%;
+}
+.header_nav_block ul {
+    display: flex;
+}
+.header_nav_block ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+.header a{
+    text-decoration: none;
+    color: #000000;
+}
+.header a:hover {
+    text-decoration: underline;
+}
+.page_content {
+    margin-top: 50px;
+}
+.authorization_block, .registration_block {
+    padding: 50px;
+}
+.form_row {
+    margin-bottom: 20px;
+}
+.has-error {
+    color: indianred;
+}
+
