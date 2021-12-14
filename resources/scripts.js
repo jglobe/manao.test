@@ -6,7 +6,8 @@ $(document).on('click', '#authorization_submit',function(){
     })
         .done(function( data ) {
             if ( data.success ){
-                window.location.href = 'login.php';
+                // редирект после авторизации, закомм для проверки отправки формы
+                // window.location.href = 'login.php';
             } else {
                 $('.auth_error').text('');
                 for (let error in data.errors) {
@@ -28,7 +29,8 @@ $(document).on('click', '#registration_submit',function(){
             if (data.success) {
                 $('.reg_error').text('');
                 document.getElementById('registration_form').reset();
-                window.location.href = 'index.php';
+                // редирект после регистрации, закомм для проверки отправки формы
+                // window.location.href = 'index.php';
             } else {
                 $('.reg_error').text('');
                 for (let error in data.errors) {
@@ -46,7 +48,8 @@ $(document).on('click', '#logout_submit',function(){
     })
         .done(function( data ) {
             if (data.success) {
-                window.location.href = 'login.php';
+                // редирект после логаута, закомм для проверки отправки формы
+                // window.location.href = 'login.php';
             }
         });
 });
