@@ -51,7 +51,7 @@
                 $login_error = 'введите логин';
             }elseif (strlen($login)<6) {
                 $login_error = 'логин должен содержать 6 и более символов';
-            } elseif (strpos($login,' ')) {
+            } elseif (preg_match('% +%', $login )) {
                 $login_error = 'логин не должен содержать пробельных символов';
             } elseif (self::alreadyUsedLogin($db_users,$login)) {
                 $login_error = 'данный логин уже используется';
@@ -65,7 +65,8 @@
                 $password_error = 'пароль должен содержать хотябы одну цифру';
             } elseif (!preg_match('/\D/', $password)) {
                 $password_error = 'пароль должен содержать хотябы одну букву';
-
+            } elseif (preg_match('% +%', $password)) {
+                $password_error = 'пароль не должен содержать пробельных символов';
             }
 
             if (is_null($confirm_password)) {
@@ -76,8 +77,10 @@
 
             if (is_null($email)) {
                 $email_error = 'введите email';
-            }elseif (!preg_match('%[_a-z0-9-]*@[a-z0-9-]{2,}+\.[a-z0-9-]{2,}%',$email)) {
+            }elseif (!preg_match('%[_a-z0-9-]{4,}@[a-z0-9-]{2,}+\.[a-z0-9-]{2,}%',$email)) {
                 $email_error = 'введите корректный email. пример: email123@example.com';
+            } elseif (preg_match('% +%', $email)) {
+                $email_error = 'email не должен содержать пробельных символов';
             } elseif (self::alreadyUsedEmail($db_users,$email)) {
                 $email_error = 'данный email уже используется';
             }
@@ -88,6 +91,8 @@
                 $username_error = 'в имени не должно быть цифр';
             } elseif (strlen($username)<2) {
                 $username_error = 'имя должно быть более 2х символов';
+            } elseif (preg_match('% +%', $username)) {
+                $username_error = 'имя не должно содержать пробельных символов';
             }
 
             // соберем ошибки

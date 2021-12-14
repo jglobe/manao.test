@@ -76,7 +76,7 @@ if (isset($_COOKIE['PHPSESSID'])) {
             <div class="form_row">
                 <p class="has-error reg_error email_error"></p>
                 <label for="reg_email">Введите email:</label>
-                <input type="email" id="reg_email" name="reg_email">
+                <input type="text" id="reg_email" name="reg_email">
             </div>
             <div class="form_row">
                 <p class="has-error reg_error username_error"></p>
