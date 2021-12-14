@@ -24,17 +24,17 @@ if (isset($_COOKIE['PHPSESSID'])) {
             <li><a href="page2.php">Page2</a></li>
         </ul>
     </div>
-    <div class="header_user_block" style='display: <?php if($_SESSION['login']) echo "flex" ?>'>
+    <div class="header_user_block" style='display: <?php if($_SESSION['username']) echo "flex" ?>'>
         <p class="header_username">
             Hello,
-            <?php if($_SESSION['login']) echo $_SESSION['login']; ?>
+            <?php if($_SESSION['username']) echo $_SESSION['username']; ?>
         </p>
         <span>|</span>
         <form action="actions/logout.php">
             <button id="logout_submit" form="logout_form" type="button">Выход</button>
         </form>
     </div>
-    <div class="header_login" style='display: <?php if(!$_SESSION['login']) echo "flex" ?>'>
+    <div class="header_login" style='display: <?php if(!$_SESSION['username']) echo "flex" ?>'>
         <a href="login.php">Войти</a>
     </div>
 </header>

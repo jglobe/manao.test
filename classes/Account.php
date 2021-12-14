@@ -29,7 +29,7 @@ class Account {
                 //юзер найден, проверим пароль
                  if ($user->password === self::getHash($password)) {
                     $results_array['success'] = true;
-                    $results_array['login'] = $login;
+                    $results_array['username'] = $user->username;
                 } else {
                     $results_array['errors']['auth_password'] = 'неверный пароль';
                 }
