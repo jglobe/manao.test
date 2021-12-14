@@ -18,7 +18,7 @@
 
     if ($result['success']){
         session_start();
-        $_SESSION ['login']= $result['login'];
+        $_SESSION ['username']= $result['username'];
     }
 
     echo json_encode($result);

@@ -21,7 +21,7 @@
 
             $db_users [] = $user_data;
             file_put_contents(self::$db_file, json_encode($db_users));
-            return ['success'=>true, 'login'=>$login];
+            return ['success'=>true, 'username'=>$username];
         }
         static function alreadyUsedLogin ($db_users,$login) {
             foreach ($db_users as $db_user) {
